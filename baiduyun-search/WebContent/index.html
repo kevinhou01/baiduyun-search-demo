@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>baiduyun search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="baiduyun search" />
+<meta name="description" content="baiduyun search" />
+<link href="css/base2.css" rel="stylesheet" type="text/css" />
+<script>
+	function checkForm(){
+		var q=document.getElementById("q");
+		if(q.value==null || q.value==""){
+			alert("please input the key words for search:");
+			return false;
+		}
+		return true;
+	}
+</script>
+
+
+</head>
+<body>
+
+<div style="display: none;" class="tip" id="topTipText"></div>
+<div class="nav center">
+<div class="box_outer">
+<div class="box_body">
+<div align="center" style="padding-top: 100px;">
+<img src="images/logo.png"/>
+</div>
+<table class="sch">
+	<tbody>
+		<tr id='test'>
+			<td class="first_td"></td>
+			<td width="460px"></td>
+			<form id="cse-search-box" name="f"  action="./result.jsp" method="post" target="_blank"  onsubmit="return checkForm()">
+
+					<td width="373px">
+					<br/>
+					<input type="hidden" name="wp" id="wp" value="0" />
+				    <input type="hidden" name="op" id="op" value="0" />
+				    <input type="hidden" name="ty" id="ty" value="gn" />
+					<div id="sugOut"><input   name="q"  value=""  maxlength=100
+						id="q" autocomplete="off">
+						<br>
+					<div id="sug"></div>
+					</div>
+					</td>
+					<td>
+					<br/>
+					<button type="submit">search begin</button>
+					</td>
+					</form>
+			<td align=right id="hao_search_content" width="360px"></td>
+			<td class="last_td"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="box_b"><span class="box_p"></span></div>
+</div>
+</div>
+<div>
+<p align="center" style="padding-top: 300px;">
+				this is a test demo, not for any business use。<br />
+			</p>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="js/base.js"></script>

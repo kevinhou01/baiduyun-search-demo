@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>BaiduYunSearch</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <filter>
+    <filter-name>ChineseFilter</filter-name>
+    <filter-class>com.kevintest.util.ChineseFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>ChineseFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>baiduYunServlet</servlet-name>
+    <servlet-class>com.kevintest.servlet.BaiduYunServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>baiduYunServlet</servlet-name>
+    <url-pattern>/server</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Log4JTestServlet</servlet-name>
+    <servlet-class>com.java120.log.Log4JTestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Log4JInitServlet</servlet-name>
+    <servlet-class>com.java120.log.Log4JInitServlet</servlet-class>
+    <init-param>
+      <param-name>log4j-properties-location</param-name>
+      <param-value>/WEB-INF/classes/log4j.properties</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Log4JTestServlet</servlet-name>
+    <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+</web-app>
